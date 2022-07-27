@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app"></div>
 
@@ -18,22 +20,34 @@
         //     // 정의할 내용
         // })
 
-        
-        Object.defineProperty(viewModel, 'str', {
-            // 속성에 접근했을 때의 동작을 정의
-            get: function() {
-                // console.log(viewModel.str);
-                console.log('접근');
-            },
-            
+        // 즉시 실행 함수
+        (function () {
+            function init() {
+                Object.defineProperty(viewModel, 'str', {
+                    // 속성에 접근했을 때의 동작을 정의
+                    get: function () {
+                        // console.log(viewModel.str);
+                        console.log('접근');
+                    },
 
-            // 속성에 값을 할당했을 때의 동작을 정의
-            set: function(newValue) {
-                console.log('할당', newValue);
-                // 데이터의 변화를 화면에 자동으로 바꿔주는 기능을 reactivity
-                div.innerHTML = newValue;
+
+                    // 속성에 값을 할당했을 때의 동작을 정의
+                    set: function (newValue) {
+                        console.log('할당', newValue);
+                        // 데이터의 변화를 화면에 자동으로 바꿔주는 기능을 reactivity
+                        render(newValue);
+
+                    }
+                });
             }
-        }) 
+
+            function render(value) {
+                div.innerHTML = value;
+            }
+
+            init();
+        })();
     </script>
 </body>
+
 </html>
