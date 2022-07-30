@@ -13,8 +13,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> <!-- Vuejs 주소-->
     <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script> <!-- 라우터 주소 -->
     <script>
-        var router = new VueRouter({
+        var LoginComponent = {
+            template: '<div></div>'
+        }
 
+        var MainComponent = {
+
+        }
+
+        var router = new VueRouter({
+            // 페이지의 라우팅 정보
+            routes: [
+                // 페이지 갯수 만큼의 객체가 필요
+                {
+                    // 페이지의 url 이름
+                    path: '/login',
+                    // 해당 url에서 표시될 컴포넌트
+                    component: LoginComponent
+                },
+                {
+                    url은 메인
+                    컴포넌트 이름은 Main Component
+
+                }
+            ]
         });
 
         new Vue({
