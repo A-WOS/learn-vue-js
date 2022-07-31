@@ -9,28 +9,33 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <!-- 뷰 인스턴스에 라우터 인스턴스를 연결해야만 사용할 수 있음 -->
+        <router-view></router-view>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> <!-- Vuejs 주소-->
     <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script> <!-- 라우터 주소 -->
     <script>
         var LoginComponent = {
-            template: '<div></div>'
+            template: '<div>login</div>'
         }
 
         var MainComponent = {
-
+            template: '<div>main</div>'
         }
 
         var router = new VueRouter({
-            // 페이지의 라우팅 정보
+            // 페이지의 라우팅 정보, 배열
             routes: [
                 // 페이지 갯수 만큼의 객체가 필요
+                // 로그인 페이지 정보
                 {
                     // 페이지의 url 이름
                     path: '/login',
                     // 해당 url에서 표시될 컴포넌트
                     component: LoginComponent
                 },
+                // 메인 페이지 정보
                 {
                     path: '/main',
                     component: MainComponent
