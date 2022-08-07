@@ -17,6 +17,17 @@
         <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
         <!-- <p id="abc1234">{{ num }}</p> -->
         <p>{{ doubleNum }}</p>
+        <!-- 로딩중이면 Loading... -->
+        <div v-if="loading">
+            Loading...
+        </div>
+        <!-- 로딩이 끝나면 아래와 같이 -->
+        <div v-else>
+            test user has been logged in
+        </div>
+        <div v-show="loading">
+            Loading...
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -28,7 +39,8 @@
                 num: 10,
                 // doubleNum: 10 * 2
                 uuid: 'abc1234',
-                name: 'text-blue'
+                name: 'text-blue',
+                loading: true
             },
             computed: {
                 doubleNum: function () {
