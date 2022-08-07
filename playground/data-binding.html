@@ -10,7 +10,12 @@
 
 <body>
     <div id="app">
-        <p>{{ num }}</p>
+        <!-- p태그에 id를 abc1234 아렇게 쓸 수도 있다.
+        그렇게 쓰기 위해서는 28번째 줄라인에 uuid를 추가해주고
+        v-bind:id="uuid"를 해주면된다.
+        -->
+        <p v-bind:id="uuid" class="">{{ num }}</p>
+        <!-- <p id="abc1234">{{ num }}</p> -->
         <p>{{ doubleNum }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,6 +27,8 @@
                 // 그래서 computed라는 속성을 활용
                 num: 10,
                 // doubleNum: 10 * 2
+                uuid: 'abc1234',
+                name: 'text-blue'
             },
             computed: {
                 doubleNum: function () {
