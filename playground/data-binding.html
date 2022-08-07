@@ -14,7 +14,7 @@
         그렇게 쓰기 위해서는 28번째 줄라인에 uuid를 추가해주고
         v-bind:id="uuid"를 해주면된다.
         -->
-        <p v-bind:id="uuid" class="">{{ num }}</p>
+        <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
         <!-- <p id="abc1234">{{ num }}</p> -->
         <p>{{ doubleNum }}</p>
     </div>
